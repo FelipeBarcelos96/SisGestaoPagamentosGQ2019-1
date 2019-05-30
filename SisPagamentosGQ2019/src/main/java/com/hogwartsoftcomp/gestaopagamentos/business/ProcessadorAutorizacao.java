@@ -19,10 +19,6 @@ public final class ProcessadorAutorizacao {
 
     private ProcessadorAutorizacao() {
         this.autorizadores = new ArrayList<>();
-        autorizadores.add(new GerenteImediato(true));
-        autorizadores.add(new GerenteGeral(true));
-        autorizadores.add(new DiretorFinanceiro(true));
-        autorizadores.add(new DiretorGeral(true));
     }
 
     public static ProcessadorAutorizacao getInstance() {
