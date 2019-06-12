@@ -1,4 +1,3 @@
-
 package com.hogwartsoftcomp.gestaopagamentos.utils;
 
 import java.text.DateFormat;
@@ -10,10 +9,21 @@ import java.util.Date;
  *
  * @author Felipe
  */
-public abstract class ValidaData {
-    final static String DATE_FORMAT = "dd-MM-yyyy";
+public class ValidaData {
+
+    private static final String DATE_FORMAT = "dd-MM-yyyy";
+    private static ValidaData instancia;
     
-    public static boolean validaData(String date) {
+     private ValidaData() {
+    }
+
+    public static ValidaData getInstance() {
+        if (instancia == null) {
+            instancia = new ValidaData();
+        }
+        return instancia;
+    }
+    public boolean validaData(String date) {
         try {
             DateFormat df = new SimpleDateFormat(DATE_FORMAT);
             df.setLenient(false);
@@ -22,10 +32,9 @@ public abstract class ValidaData {
         } catch (ParseException e) {
             return false;
         }
-}
-    
- public static boolean validaData(Date date) {
-    
+    }
+
+    public boolean validaData(Date date) {
         try {
             DateFormat df = new SimpleDateFormat(DATE_FORMAT);
             String data = df.format(date);
@@ -35,9 +44,10 @@ public abstract class ValidaData {
         } catch (ParseException e) {
             return false;
         }
-}
-    public static Date converteData(String data) throws ParseException{
-       DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-       return df.parse(data);
+    }
+
+    public Date converteData(String data) throws ParseException {
+        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+        return df.parse(data);
     }
 }

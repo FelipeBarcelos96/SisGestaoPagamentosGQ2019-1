@@ -1,0 +1,38 @@
+
+Çcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento#aceita(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)Z∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java, ,("5*è
+2∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java-= -(@—Œ
+∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java-= -(K
+%2double"@com.hogwartsoftcomp.gestaopagamentos.model.Pagamento#getValor()D*=
+;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.Pagamento2
+getValor()*
+1*í
+4∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java-' -(*—Œ
+∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java-' -(5
+%1double"@com.hogwartsoftcomp.gestaopagamentos.model.Pagamento#getValor()D*=
+;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.Pagamento2
+getValor()*
+2
+1*µ
+5∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java- -(ÒÓ
+∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java- -(#
+%0boolean"Rcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento#isDisponivel()Z*FD
+Bcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento2isDisponivel()*	
+2
+4
+1*Ù
+1∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java- -(d"ª
+∞
+•C:\Users\Harrison\Documents\Git\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\AutorizadorPagamento.java- -(d
+"":;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.PagamentoBFD
+Bcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento

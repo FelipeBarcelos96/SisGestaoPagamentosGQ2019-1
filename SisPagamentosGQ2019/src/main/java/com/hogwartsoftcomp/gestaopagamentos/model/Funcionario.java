@@ -1,8 +1,6 @@
 package com.hogwartsoftcomp.gestaopagamentos.model;
 
-import java.io.Serializable;
-
-public class Funcionario implements Comparable<Funcionario>, Serializable {
+public class Funcionario {
 
     private String nome;
     private String cargo;
@@ -26,7 +24,4 @@ public class Funcionario implements Comparable<Funcionario>, Serializable {
                 + "," + this.cargo;
     }
 
-    public int compareTo(Funcionario o) {
-        return nome.compareTo(o.nome);
-    }
 }

@@ -1,20 +1,18 @@
 package com.hogwartsoftcomp.gestaopagamentos.model;
 
 import com.hogwartsoftcomp.gestaopagamentos.utils.ValidaData;
-import java.io.Serializable;
 import java.util.ArrayList;
-
 import java.util.Date;
+import java.util.List;
 
-public class Pagamento implements Comparable<Pagamento>, Serializable {
+public class Pagamento {
 
     private String descricao;
     private double valor;
     private Date dataVencimento;
     private Date dataPagamento;
     private Funcionario solicitante;
-    private ArrayList<OcorrenciasPagamento> ocorrencias = null;
-    
+    private ArrayList<OcorrenciasPagamento> ocorrencias;
 
     public Pagamento(String pdescricao, double pvalor, Date pdataVencimento, Date pdataPagamento, Funcionario psolicitante) {
         this.descricao = pdescricao;
@@ -38,9 +36,9 @@ public class Pagamento implements Comparable<Pagamento>, Serializable {
     }
 
     public void setDataVencimento(Date dataVencimento) {
-       if(ValidaData.validaData(dataVencimento)){
-          this.dataVencimento = dataVencimento;
-       }
+        if (ValidaData.getInstance().validaData(dataVencimento)) {
+            this.dataVencimento = dataVencimento;
+        }
     }
 
     public Date getDataPagamento() {
@@ -48,9 +46,9 @@ public class Pagamento implements Comparable<Pagamento>, Serializable {
     }
 
     public void setDataPagamento(Date dataPagamento) {
-       if(ValidaData.validaData(dataPagamento)){
-          this.dataPagamento = dataPagamento;
-       }
+        if (ValidaData.getInstance().validaData(dataPagamento)) {
+            this.dataPagamento = dataPagamento;
+        }
     }
 
     public Funcionario getSolicitante() {
@@ -77,15 +75,11 @@ public class Pagamento implements Comparable<Pagamento>, Serializable {
                 + "," + this.solicitante;
     }
 
-    public int compareTo(Pagamento o) {
-        return descricao.compareTo(o.descricao);
-    }
-
-    public ArrayList<OcorrenciasPagamento> getOcorrencias() {
+    public List<OcorrenciasPagamento> getOcorrencias() {
         return ocorrencias;
     }
-    
-    public boolean addOcorrencia(OcorrenciasPagamento o){
+
+    public boolean addOcorrencia(OcorrenciasPagamento o) {
         return this.ocorrencias.add(o);
     }
 
