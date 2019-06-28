@@ -1,8 +1,10 @@
 package com.hogwartsoftcomp.gestaopagamentos.main;
 
+import com.hogwartsoftcomp.gestaopagamentos.views.MenuView;
+
 public class Principal {
 
     public static void main(String[] args){
-        throw new UnsupportedOperationException();
+        new MenuView().setVisible(true);
     }
 }
