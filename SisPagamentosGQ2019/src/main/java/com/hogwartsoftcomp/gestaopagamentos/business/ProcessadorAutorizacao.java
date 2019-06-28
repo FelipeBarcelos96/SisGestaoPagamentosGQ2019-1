@@ -27,6 +27,12 @@ public final class ProcessadorAutorizacao {
         }
         return instancia;
     }
+    
+    public static  void LimpaInstancia(){
+        if(instancia != null){
+            instancia = null;
+        }
+    }
 
     public boolean processar(Pagamento pag) {
         for (AutorizadorPagamento autorizador : autorizadores) {
