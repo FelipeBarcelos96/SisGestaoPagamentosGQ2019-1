@@ -40,11 +40,10 @@ public class Pagamento {
     @OneToOne(cascade = CascadeType.ALL)
     private ArrayList<OcorrenciasPagamento> ocorrencias;
 
-    public Pagamento(String pdescricao, double pvalor, Date pdataVencimento, Date pdataPagamento, Funcionario psolicitante) {
+    public Pagamento(String pdescricao, double pvalor, Date pdataVencimento, Funcionario psolicitante) {
         this.descricao = pdescricao;
         this.valor = pvalor;
         setDataVencimento(pdataVencimento);
-        setDataPagamento(pdataPagamento);
         this.solicitante = psolicitante;
         ocorrencias = new ArrayList<>();
     }

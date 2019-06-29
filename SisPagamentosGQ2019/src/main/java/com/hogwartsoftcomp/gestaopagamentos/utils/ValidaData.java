@@ -50,4 +50,8 @@ public class ValidaData {
         DateFormat df = new SimpleDateFormat(DATE_FORMAT);
         return df.parse(data);
     }
+    public String converteData(Date data) throws ParseException {
+        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+        return df.format(data);
+    }
 }
