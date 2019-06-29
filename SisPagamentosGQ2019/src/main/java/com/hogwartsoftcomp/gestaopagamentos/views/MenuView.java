@@ -5,6 +5,9 @@
  */
 package com.hogwartsoftcomp.gestaopagamentos.views;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -34,6 +37,10 @@ public class MenuView extends javax.swing.JFrame {
         funcionariosMenu = new javax.swing.JMenu();
         manterFuncionariosMenuItem = new javax.swing.JMenuItem();
         pagamentosMenu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         SairMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,7 +59,36 @@ public class MenuView extends javax.swing.JFrame {
         jMenuBar1.add(funcionariosMenu);
 
         pagamentosMenu.setText("Pagamentos");
+
+        jMenuItem1.setText("Manter Pagamentos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        pagamentosMenu.add(jMenuItem1);
+
+        jMenuItem3.setText("Autorizar Pagamentos");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        pagamentosMenu.add(jMenuItem3);
+
         jMenuBar1.add(pagamentosMenu);
+
+        jMenu1.setText("Ocorrências");
+
+        jMenuItem2.setText("Consultar Ocorrências");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
 
         SairMenu.setText("Sair");
         SairMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +122,26 @@ public class MenuView extends javax.swing.JFrame {
     private void manterFuncionariosMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manterFuncionariosMenuItemActionPerformed
        new ManterFuncionariosView().setVisible(true);        
     }//GEN-LAST:event_manterFuncionariosMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        try {
+            new PagamentosView().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new VisualizarOcorrenciasView().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        try {
+            new AutorizarPagamentosView().setVisible(true);
+        } catch (ParseException ex) {
+            Logger.getLogger(MenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,7 +181,11 @@ public class MenuView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu SairMenu;
     private javax.swing.JMenu funcionariosMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem manterFuncionariosMenuItem;
     private javax.swing.JMenu pagamentosMenu;
     // End of variables declaration//GEN-END:variables

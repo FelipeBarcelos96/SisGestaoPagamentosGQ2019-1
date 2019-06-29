@@ -5,6 +5,7 @@
  */
 package com.hogwartsoftcomp.gestaopagamentos.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "Ocorrencias")
-public class OcorrenciasPagamento {
+public class OcorrenciasPagamento implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

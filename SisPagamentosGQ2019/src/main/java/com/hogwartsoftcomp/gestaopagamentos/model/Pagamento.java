@@ -1,6 +1,7 @@
 package com.hogwartsoftcomp.gestaopagamentos.model;
 
 import com.hogwartsoftcomp.gestaopagamentos.utils.ValidaData;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +17,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Pagamento")
-public class Pagamento {
+public class Pagamento implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -90,6 +91,10 @@ public class Pagamento {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public int getId(){
+        return this.id;
     }
 
     @Override

@@ -5,12 +5,19 @@
  */
 package com.hogwartsoftcomp.gestaopagamentos.views;
 
+
+import com.hogwartsoftcomp.gestaopagamentos.daos.HibernateUtil;
+import com.hogwartsoftcomp.gestaopagamentos.daos.PagamentoDaooooo;
 import com.hogwartsoftcomp.gestaopagamentos.model.Funcionario;
 import com.hogwartsoftcomp.gestaopagamentos.model.Pagamento;
 import com.hogwartsoftcomp.gestaopagamentos.servico.GenericService;
 import com.hogwartsoftcomp.gestaopagamentos.servico.IService;
+import com.hogwartsoftcomp.gestaopagamentos.utils.ValidaData;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,11 +30,14 @@ public class PagamentosView extends javax.swing.JFrame {
     /**
      * Creates new form PagamentosView
      */
-    public PagamentosView() {
+    public PagamentosView() throws ParseException {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
         populaArray();
+        populateTable();
     }
+    PagamentoDaooooo pd;
+    Pagamento pag;
 
     List<String> ls = new ArrayList<String>();
     
@@ -39,17 +49,24 @@ public class PagamentosView extends javax.swing.JFrame {
      }
     }
     
-    private void populateTable() {
+    private void populateTable() throws ParseException {
 
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
-        IService<Pagamento> quartoService = new GenericService<Pagamento>(Pagamento.class);
+        IService<Pagamento> pagamentoService = new GenericService<Pagamento>(Pagamento.class);
 
-        List<Pagamento> quartos = quartoService.getAll();
-        if (quartos != null) {
-            for (Pagamento quarto : quartos) {
-                model.addRow(new Object[]{quarto.getId(), quarto.getDescricao(), quarto.getAndar(), quarto.getNumero(), quarto.getTipoQuarto(), quarto.getValorQuarto()});
+        List<Pagamento> pagamentos = pagamentoService.getAll();
+        if (pagamentos != null) {
+            for (Pagamento pagamento : pagamentos) {
+                model.addRow(new Object[]{pagamento.getDescricao(), pagamento.getValor(), pagamento.getSolicitante().getNome(), ValidaData.getInstance().converteData(pagamento.getDataVencimento())});
             }
+        }
+    }
+    
+    private void clearTable() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        for (int i = jTable1.getRowCount() - 1; i >= 0; i--) {
+            model.removeRow(i);
         }
     }
     
@@ -75,8 +92,7 @@ public class PagamentosView extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jButton1 = new javax.swing.JButton();
-        listarButton = new javax.swing.JButton();
+        novoButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
@@ -88,13 +104,12 @@ public class PagamentosView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Cadastro de Pagamentos:");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Solicitante:");
 
         jComboBox1.setModel(new DefaultComboBoxModel(ls.toArray()));
-        jComboBox1.setSelectedIndex(-1);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Descrição do Pagamento:");
@@ -111,7 +126,12 @@ public class PagamentosView extends javax.swing.JFrame {
 
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
-        jButton1.setText("Novo");
+        novoButton.setText("Novo");
+        novoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                novoButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -137,7 +157,7 @@ public class PagamentosView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1)))
+                                .addComponent(novoButton)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -158,25 +178,25 @@ public class PagamentosView extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(novoButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        listarButton.setText("Listar Pagamentos");
+        jScrollPane2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Descrição do Pagamento", "Valor", "Solicitante", "Data de Vencimento"
+                "Código", "Descrição do Pagamento", "Valor", "Solicitante", "Data de Vencimento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -190,6 +210,11 @@ public class PagamentosView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         jButton3.setText("Visualizar Ocorrências");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         fecharButton.setText("Fechar");
         fecharButton.addActionListener(new java.awt.event.ActionListener() {
@@ -207,16 +232,14 @@ public class PagamentosView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(listarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(fecharButton)))
+                        .addComponent(fecharButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton3))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -227,9 +250,7 @@ public class PagamentosView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(listarButton)
-                    .addComponent(jButton3))
+                .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,6 +263,45 @@ public class PagamentosView extends javax.swing.JFrame {
     private void fecharButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecharButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_fecharButtonActionPerformed
+
+    private void novoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoButtonActionPerformed
+        pd = new PagamentoDaooooo(Pagamento.class, HibernateUtil.getSessionFactory());
+        Funcionario fun = null;
+    IService<Funcionario> funcionarioService = new GenericService<Funcionario>(Funcionario.class);
+    List<Funcionario> funcs = funcionarioService.getAll();
+    for (Funcionario funcionario : funcs) {
+       if(funcionario.getNome() == jComboBox1.getSelectedItem()){
+           fun = funcionario;
+       }
+     }
+        try {
+            if(fun != null){
+            pag = new Pagamento(jTextArea1.getText(),Double.parseDouble(jTextField1.getText()), ValidaData.getInstance().converteData(jFormattedTextField1.getText()), fun);
+            pd.save(pag);
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(PagamentosView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        clearTable();
+        try {
+            populateTable();
+        } catch (ParseException ex) {
+            Logger.getLogger(PagamentosView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_novoButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(jTable1.getSelectedRow()!= 0){
+            int cod = (int)jTable1.getValueAt(jTable1.getSelectedRow(), 0);
+            try {
+                new VisualizarOcorrenciasView(cod).setVisible(true);
+            } catch (ParseException ex) {
+                Logger.getLogger(PagamentosView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+        new VisualizarOcorrenciasView().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,7 +333,11 @@ public class PagamentosView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PagamentosView().setVisible(true);
+                try {
+                    new PagamentosView().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(PagamentosView.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
             }
         });
@@ -283,7 +347,6 @@ public class PagamentosView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton fecharButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
@@ -298,6 +361,6 @@ public class PagamentosView extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton listarButton;
+    private javax.swing.JButton novoButton;
     // End of variables declaration//GEN-END:variables
 }
