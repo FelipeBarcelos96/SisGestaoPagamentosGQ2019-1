@@ -1,0 +1,244 @@
+-------------------------------------------------------------------------------
+Test set: Teste
+-------------------------------------------------------------------------------
+Tests run: 46, Failures: 30, Errors: 10, Skipped: 0, Time elapsed: 0.58 sec <<< FAILURE! - in Teste
+teste10(Teste)  Time elapsed: 0.141 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar venci]do.> but was:<[Pagamento não aprova]do.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste10(Teste.java:156)
+
+teste11(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$500.01 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste11(Teste.java:166)
+
+teste12(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$500.01 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste12(Teste.java:177)
+
+teste13(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$500.01 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste13(Teste.java:187)
+
+teste14(Teste)  Time elapsed: 0.015 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$500.01 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste14(Teste.java:198)
+
+teste15(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar venci]do.> but was:<[Pagamento não aprova]do.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste15(Teste.java:209)
+
+teste16(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$1500.0 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste16(Teste.java:219)
+
+teste17(Teste)  Time elapsed: 0.016 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$1500.0 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste17(Teste.java:229)
+
+teste18(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$1500.0 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste18(Teste.java:239)
+
+teste19(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$1500.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste19(Teste.java:249)
+
+teste20(Teste)  Time elapsed: 0.015 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar venci]do.> but was:<[Pagamento não aprova]do.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste20(Teste.java:259)
+
+teste21(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor financeiro não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$1500.01 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste21(Teste.java:269)
+
+teste22(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor financeiro não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$1500.01 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste22(Teste.java:279)
+
+teste23(Teste)  Time elapsed: 0.016 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor financeiro não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$1500.01 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste23(Teste.java:289)
+
+teste24(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$1500.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste24(Teste.java:299)
+
+teste25(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente geral não pôde autorizar o pagamento pelo fato do mesmo estar venci]do.> but was:<[Pagamento não aprova]do.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste25(Teste.java:310)
+
+teste26(Teste)  Time elapsed: 0.016 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$15000.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste26(Teste.java:320)
+
+teste27(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$15000.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste27(Teste.java:330)
+
+teste28(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$15000.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste28(Teste.java:340)
+
+teste29(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor geral não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$15000.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste29(Teste.java:350)
+
+teste30(Teste)  Time elapsed: 0.015 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Diretor geral não pôde autorizar o pagamento pelo fato do mesmo estar venci]do.> but was:<[Pagamento não aprova]do.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste30(Teste.java:360)
+
+teste36(Teste)  Time elapsed: 0.032 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste36(Teste.java:434)
+
+teste37(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste37(Teste.java:444)
+
+teste38(Teste)  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste38(Teste.java:454)
+
+teste39(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste39(Teste.java:464)
+
+teste40(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste40(Teste.java:474)
+
+teste41(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste41(Teste.java:484)
+
+teste42(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste42(Teste.java:494)
+
+teste43(Teste)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste43(Teste.java:505)
+
+teste44(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste44(Teste.java:516)
+
+teste45(Teste)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at Teste.teste45(Teste.java:527)
+
+teste1(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$0.01 foi autorizado pelo Gerente imediat]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste1(Teste.java:59)
+
+teste2(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$0.01 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste2(Teste.java:70)
+
+teste3(Teste)  Time elapsed: 0.015 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$0.01 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste3(Teste.java:80)
+
+teste4(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$0.01 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste4(Teste.java:91)
+
+teste5(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencido.]> but was:<[Pagamento não aprovado]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste5(Teste.java:102)
+
+teste6(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$500.0 foi autorizado pelo Gerente imediat]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste6(Teste.java:113)
+
+teste7(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$500.0 foi autorizado pelo Gerente geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste7(Teste.java:124)
+
+teste8(Teste)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencid]o.> but was:<[Pagamento no valor de R$500.0 foi autorizado pelo Diretor financeir]o.>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste8(Teste.java:135)
+
+teste9(Teste)  Time elapsed: 0.016 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[O Gerente imediato não pôde autorizar o pagamento pelo fato do mesmo estar vencido].> but was:<[Pagamento no valor de R$500.0 foi autorizado pelo Diretor geral].>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at Teste.teste9(Teste.java:146)
+

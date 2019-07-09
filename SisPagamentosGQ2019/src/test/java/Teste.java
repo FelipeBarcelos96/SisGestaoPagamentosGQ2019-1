@@ -1,5 +1,3 @@
-
-
 import com.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento;
 import com.hogwartsoftcomp.gestaopagamentos.business.ProcessadorAutorizacao;
 import com.hogwartsoftcomp.gestaopagamentos.model.Funcionario;
