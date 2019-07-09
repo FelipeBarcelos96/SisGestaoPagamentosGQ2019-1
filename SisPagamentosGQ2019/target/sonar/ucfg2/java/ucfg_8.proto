@@ -1,0 +1,52 @@
+
+‡com.hogwartsoftcomp.gestaopagamentos.business.ProcessadorAutorizacao#processar(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)Z½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java% %("5*ò
+2½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java& &(-¤
+¡
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java& &(-Q
+autorizadorBcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento"__id*
+""*
+4
+1*½
+3½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java( ((¬©
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java( (()
+
+%2void"„com.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento#autoriza(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)V*S
+Q
+autorizadorBcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento*=
+;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.Pagamento2@autoriza(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)"È
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java) )(
+""*ù
+4½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java' '(«¨
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java' '('
+%1boolean"‚com.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento#aceita(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)Z*S
+Q
+autorizadorBcom.hogwartsoftcomp.gestaopagamentos.business.AutorizadorPagamento*=
+;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.Pagamento2>aceita(Lcom/hogwartsoftcomp/gestaopagamentos/model/Pagamento;)*
+2
+3*Œ
+5½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java&0 &(=Á
+¾
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java&0 &(=
+%0java.util.ArrayList"__id*[*YF
+Dcom.hogwartsoftcomp.gestaopagamentos.business.ProcessadorAutorizacao"
+autorizadores*
+2*Ž
+1½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java, ,("È
+½
+²C:\Users\Felipe\Documents\NetBeansProjects\SisGestaoPagamentosGQ2019-1\SisPagamentosGQ2019\src\main\java\com\hogwartsoftcomp\gestaopagamentos\business\ProcessadorAutorizacao.java, ,(
+"":;
+pag4com.hogwartsoftcomp.gestaopagamentos.model.PagamentoBHF
+Dcom.hogwartsoftcomp.gestaopagamentos.business.ProcessadorAutorizacao

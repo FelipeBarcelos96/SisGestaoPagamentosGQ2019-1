@@ -1,0 +1,7 @@
+organization=koreano96-github
+projectKey=Koreano96_SisGestaoPagamentosGQ2019-1
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.27038
+dashboardUrl=https://sonarcloud.io/dashboard?id=Koreano96_SisGestaoPagamentosGQ2019-1
+ceTaskId=AWvWLkbRV6ugRO1z7wR6
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWvWLkbRV6ugRO1z7wR6
