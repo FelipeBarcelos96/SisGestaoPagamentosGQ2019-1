@@ -3,7 +3,6 @@ package com.hogwartsoftcomp.gestaopagamentos.business;
 import com.hogwartsoftcomp.gestaopagamentos.model.OcorrenciasPagamento;
 import com.hogwartsoftcomp.gestaopagamentos.model.Pagamento;
 import com.hogwartsoftcomp.gestaopagamentos.utils.ValidaData;
-import java.util.Calendar;
 import java.util.Date;
 
 public class AutorizadorPagamento {
