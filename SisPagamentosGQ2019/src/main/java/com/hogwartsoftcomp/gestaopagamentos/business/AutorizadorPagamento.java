@@ -2,6 +2,7 @@ package com.hogwartsoftcomp.gestaopagamentos.business;
 
 import com.hogwartsoftcomp.gestaopagamentos.model.OcorrenciasPagamento;
 import com.hogwartsoftcomp.gestaopagamentos.model.Pagamento;
+import com.hogwartsoftcomp.gestaopagamentos.utils.ValidaData;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -17,32 +18,44 @@ public class AutorizadorPagamento {
         this.disponivel = true;
     }
 
-    public void autoriza(Pagamento pag)  {
-        Date data = new Date();
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(data);
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        data = cal.getTime();
-        
+    public void autoriza(Pagamento pag) {
+        ValidaData data = ValidaData.getInstance();
+        Date dataAtualZerada = data.getDataZerada();
+
         OcorrenciasPagamento o;
 
-        if (pag.getDataVencimento().getTime() >= data.getTime()) {
-            String descricao = "Pagamento no valor de R$" + pag.getValor() + " foi autorizado pelo " + this.nomeAutorizador + ".";
-            o = new OcorrenciasPagamento(data, descricao, pag.getSolicitante().getNome());
-            pag.addOcorrencia(o);
-            pag.setDataPagamento(data);
-        } else {
-            String descricao = "O " + this.nomeAutorizador + " não pôde autorizar o pagamento pelo fato do mesmo estar vencido.";
-            o = new OcorrenciasPagamento(data, descricao, pag.getSolicitante().getNome());
-            pag.addOcorrencia(o);
-        }
+        String descricao = "Pagamento no valor de R$" + pag.getValor() + " foi autorizado pelo " + this.nomeAutorizador + ".";
+        o = new OcorrenciasPagamento(dataAtualZerada, descricao, pag.getSolicitante().getNome());
+        pag.addOcorrencia(o);
+        pag.setDataPagamento(dataAtualZerada);
     }
 
     public boolean aceita(Pagamento pag) {
-        return (this.isDisponivel() && pag.getValor() > 0 && pag.getValor() <= this.limiteSuperior);
+
+        ValidaData validaData = ValidaData.getInstance();
+        Date data = validaData.getDataZerada();
+        String descricao;
+
+        OcorrenciasPagamento o;
+        if (isDisponivel()) {
+            if (pag.getDataVencimento().getTime() >= data.getTime()) {
+                if (pag.getValor() > 0 && pag.getValor() <= this.limiteSuperior) {
+                    autoriza(pag);
+                    return true;
+                }
+            } else {
+                descricao = "O " + this.nomeAutorizador + " não pôde autorizar o pagamento pelo fato do mesmo estar vencido.";
+                o = new OcorrenciasPagamento(data, descricao, pag.getSolicitante().getNome());
+                pag.addOcorrencia(o);
+            }
+        } else {
+            descricao = "O " + this.nomeAutorizador + " não pôde autorizar o pagamento no valor "
+                    + pag.getValor() + " por estar indisponível.";
+            o = new OcorrenciasPagamento(data, descricao, pag.getSolicitante().getNome());
+            pag.addOcorrencia(o);
+            return false;
+        }
+        return false;
     }
 
     public boolean isDisponivel() {

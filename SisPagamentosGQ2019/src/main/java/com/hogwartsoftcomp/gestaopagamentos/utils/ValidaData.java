@@ -3,6 +3,7 @@ package com.hogwartsoftcomp.gestaopagamentos.utils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -53,5 +54,17 @@ public class ValidaData {
     public String converteData(Date data) throws ParseException {
         DateFormat df = new SimpleDateFormat(DATE_FORMAT);
         return df.format(data);
+    }
+    
+    public Date getDataZerada(){
+        Date data = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(data);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        data = cal.getTime();
+        return data;
     }
 }
