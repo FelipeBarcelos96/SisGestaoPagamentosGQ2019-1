@@ -44,29 +44,18 @@ public class OcorrenciasPagamento implements Serializable {
         return dataDaOcorrencia;
     }
 
-    public void setDataDaOcorrencia(Date dataDaOcorrencia) {
-        this.dataDaOcorrencia = dataDaOcorrencia;
-    }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+
 
     public String getSolicitante() {
         return solicitante;
     }
 
-    public void setSolicitante(String solicitante) {
-        this.solicitante = solicitante;
-    }
 
-    @Override
-    public String toString() {
-        return "OcorrenciasPagamento{" + "dataDaOcorrencia=" + dataDaOcorrencia + ", descricao=" + descricao + ", solicitante=" + solicitante + '}';
-    }
+
 
 }

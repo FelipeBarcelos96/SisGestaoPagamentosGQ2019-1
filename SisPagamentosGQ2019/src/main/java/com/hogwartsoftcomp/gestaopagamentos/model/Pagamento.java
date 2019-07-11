@@ -81,29 +81,17 @@ public class Pagamento implements Serializable {
         return solicitante;
     }
 
-    public void setSolicitante(Funcionario solicitante) {
-        this.solicitante = solicitante;
-    }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+
     
     public int getId(){
         return this.id;
     }
 
-    @Override
-    public String toString() {
-        return "" + this.valor
-                + "," + this.dataVencimento
-                + "," + this.dataPagamento
-                + "," + this.solicitante;
-    }
 
     public List<OcorrenciasPagamento> getOcorrencias() {
         return ocorrencias;
