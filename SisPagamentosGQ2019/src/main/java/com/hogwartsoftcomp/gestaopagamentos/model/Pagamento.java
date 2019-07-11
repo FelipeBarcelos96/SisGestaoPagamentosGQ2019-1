@@ -32,7 +32,7 @@ public class Pagamento implements Serializable {
     
     private Date dataVencimento;
     
-    @NotNull
+   
     private Date dataPagamento;
     
     @OneToOne(cascade = CascadeType.ALL)
