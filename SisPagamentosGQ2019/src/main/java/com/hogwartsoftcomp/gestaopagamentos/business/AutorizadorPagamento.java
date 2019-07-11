@@ -61,9 +61,6 @@ public class AutorizadorPagamento {
         return disponivel;
     }
 
-    public AutorizadorPagamento comDisponibilidade(boolean disponivel) {
-        this.disponivel = disponivel;
-        return this;
-    }
+
 
 }
