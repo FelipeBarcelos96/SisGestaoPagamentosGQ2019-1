@@ -29,7 +29,7 @@ public class Pagamento implements Serializable {
     @NotNull
     private double valor;
     
-    @NotNull
+    
     private Date dataVencimento;
     
     @NotNull
